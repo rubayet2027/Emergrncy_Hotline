@@ -44,16 +44,20 @@ document.addEventListener("click", (e) => {
 
         const now = new Date();
         const time = now.toLocaleTimeString();
+        const entryElement = document.createElement("div");
         const entryHTML = `
-            <div class="flex items-center justify-between gap-3 p-2 bg-gray-100  rounded">
+            <div class="flex items-center justify-between gap-3 shadow p-2 bg-gray-100 rounded">
                 <div class="truncate">
                     <span class="font-medium">${name}</span>
                     <br>
                     <span class="text-gray-600">${number}</span>
                 </div>
                 <span class="text-xs text-gray-500 whitespace-nowrap">${time}</span>
-            </div>`;
-        historyList.insertAdjacentHTML('afterbegin', entryHTML);
+            </div>
+
+        `;
+        entryElement.innerHTML = entryHTML;
+        historyList.prepend(entryElement);
         return;
     }
 });

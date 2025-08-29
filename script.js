@@ -70,5 +70,21 @@ if (clearHistoryBtn) {
 }
 
 
+if (clearHistoryBtn) {
+  clearHistoryBtn.addEventListener("click", () => {
+    historyList.innerHTML = "";
+  });
+}
+
+
+if (navToggle && navActions) {
+  navToggle.addEventListener("click", () => {
+    if (navActions.classList.contains("hidden")) {
+      navActions.classList.remove("hidden");
+    } else {
+      navActions.classList.add("hidden");
+    }
+  });
+}
 
 

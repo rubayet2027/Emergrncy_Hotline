@@ -18,26 +18,33 @@
 
   <!-- Navbar -->
   <nav class="bg-white shadow">
-    <div class="max-w-full mx-auto px-8 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="./assets/logo.png" alt="Logo" class="w-14 h-14">      
-        <div class="leading-tight">
-          <span class="block text-xl font-extrabold text-[#006747]">Emergency <br>Service</span>
-      </div>
-    </div>
-    <div class="flex items-center gap-3 sm:gap-5 text-sm font-semibold">
-        <div class="flex items-center gap-2 bg-[#ecfff0] text-gray-800 px-3 py-1.5 rounded-full border border-green-100">
-          <span id="heartCount">0</span>
-          <img class="w-5 h-5" src="./assets/heart.png" alt="Hearts">
+    <div class="max-w-full mx-auto px-20 sm:px-8 py-2 sm:py-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2 sm:gap-3">
+          <img src="./assets/logo.png" alt="Logo" class="w-10 h-10 sm:w-14 sm:h-14">
+          <div class="leading-tight">
+            <span class="block text-lg sm:text-xl font-extrabold text-[#006747]">Emergency <br>Service</span>
+          </div>
         </div>
-        <div class="flex items-center gap-2 bg-[#ecfff0] text-gray-800 px-3 py-1.5 rounded-full border border-green-100">
-          <span id="coinCount">100</span>
-          <img class="w-5 h-5" src="./assets/coin.png" alt="Coins">
+        <div class="flex items-center gap-2 sm:gap-3">
+              <button id="navToggle" class="sm:hidden p-2 rounded-md border border-gray-200 text-[#006747] order-2" aria-controls="navActions" aria-expanded="false" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div id="navActions" class="hidden sm:flex items-center gap-2 sm:gap-5 text-xs sm:text-sm font-semibold order-1">
+            <div class="flex items-center gap-2 bg-[#ecfff0] text-gray-800 px-3 py-1.5 rounded-full border border-green-100">
+              <span id="heartCount">0</span>
+              <img class="w-5 h-5" src="./assets/heart.png" alt="Hearts">
+            </div>
+            <div class="flex items-center gap-2 bg-[#ecfff0] text-gray-800 px-3 py-1.5 rounded-full border border-green-100">
+              <span id="coinCount">100</span>
+              <img class="w-5 h-5" src="./assets/coin.png" alt="Coins">
+            </div>
+              <button type="button" id="copyPill" class="flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-[#00A63E] text-white hover:bg-green-600 active:scale-95 transition">
+                <span id="copyCount">0</span>
+                <span class="inline">Copy</span>
+            </button>
+          </div>
         </div>
-        <button type="button" id="copyPill" class="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00A63E] text-white hover:bg-green-600 active:scale-95 transition">
-          <span id="copyCount">0</span>
-          <span>Copy</span>
-        </button>
       </div>
     </div>
   </nav>
@@ -50,10 +57,10 @@
   </section>
 
   <!-- Main Layout -->
-  <main class="grid grid-cols-1 lg:grid-cols-4 gap-4 p-6">
+  <main class="grid grid-cols-1 lg:grid-cols-4 gap-4 px-15 py-8">
 
-    <!-- Cards Section -->
-    <section class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <!-- Cards Section -->
+  <section class="order-2 lg:order-1 lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
       <!-- 1. National Emergency -->
      <div class="bg-white rounded-xl shadow p-5 flex flex-col justify-between">
@@ -215,12 +222,12 @@
           <button class="copyBtn flex-1 border border-gray-300 px-3 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100"><i class="fa-regular fa-copy"></i> Copy</button>
           <button class="callBtn flex-1 bg-green-600 text-white px-3 py-2 rounded-lg text-sm hover:bg-green-700" data-name="Bangladesh Railway Helpline" data-number="163"><i class="fa-solid fa-phone"></i> Call</button>
         </div>
-      </div>
+      </div>    
 
     </section>
 
-    <!-- History Section -->
-    <aside class="lg:col-span-1 bg-white p-4 rounded-lg shadow">
+  <!-- History Section -->
+  <aside class="order-1 lg:order-2 lg:col-span-1 bg-white p-4 rounded-lg shadow">
       <div class="flex justify-between items-center mb-3">
         <h3 class="font-semibold"><i class="fa-regular fa-clock"></i> Call History</h3>
         <button id="clearHistory" class="text-sm bg-red-500 text-white px-3 py-1 rounded">Clear</button>

@@ -62,3 +62,13 @@ document.addEventListener("click", (e) => {
     }
 });
 
+
+if (clearHistoryBtn) {
+  clearHistoryBtn.addEventListener("click", () => {
+    historyList.innerHTML = "";
+  });
+}
+
+
+
+

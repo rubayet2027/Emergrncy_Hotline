@@ -17,6 +17,19 @@ document.addEventListener("click", (e) => {
         return;
     }
 
+    if (copyBtn) {
+        const card = copyBtn.parentElement;
+        const callSibling = card.querySelector(".callBtn");
+        const number = callSibling.getAttribute("data-number");
+
+        if (number) {
+            navigator.clipboard.writeText(number);
+            copyCount.textContent = Number(copyCount.textContent) + 1;
+            alert("Copied: " + number);
+        }
+        return;
+    }
+
     if (callBtn) {
         let coins = parseInt(coinCount.textContent);
         if (coins < 20) {
